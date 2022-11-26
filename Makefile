@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/11/08 22:38:09 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/11/25 23:15:56 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,7 @@ bonus:	all $(BN_OBJS)
 $(BN_OBJS): $(BN_SRCS)
 	@if [ "$(BN_OBJSRC)" == "$(findstring $(BN_OBJSRC),$?)" ]; then \
 		echo "$(CC) $(CFLAGS) -c $*.c -o $@"; \
-		$(CC) $(CFLAGS) -c $*.c -o $@; \
+		$(CC) $(CFLAGS)  -c $*.c -o $@; \
 	else \
 		touch $@; \
 	fi
