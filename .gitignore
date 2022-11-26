@@ -3,6 +3,7 @@
 *.out
 *.exe
 *.swp
+*.gch
 *.dSYM
 libftTester
 main.c
