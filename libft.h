@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:21:04 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/25 23:16:15 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/11/26 00:56:31 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+char	*ft_isall(char *str, int (*is)(int));
 
 #endif
