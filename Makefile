@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/11/25 23:15:56 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/11/26 00:57:10 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ SRCS	= ft_atoi.c       \
 		  ft_putchar_fd.c \
 		  ft_putstr_fd.c  \
 		  ft_putendl_fd.c \
-		  ft_putnbr_fd.c
+		  ft_putnbr_fd.c  \
+		  ft_isall.c
 
 BN_SRCS	= ft_lstadd_back_bonus.c  \
 		  ft_lstclear_bonus.c     \
