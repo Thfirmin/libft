@@ -6,13 +6,13 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:21:04 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/23 02:09:50 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:23:01 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
-# include "libft.h"
+# include "ft_libft.h"
 
 typedef struct	s_list
 {
