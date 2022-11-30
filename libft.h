@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:21:04 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/26 00:56:31 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:30:01 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
+int		ft_nbrlen(ssize_t n);
 size_t	ft_strlen(const char *str);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
