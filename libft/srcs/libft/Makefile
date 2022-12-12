@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/11/30 13:30:23 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/12/11 21:25:45 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,11 +69,11 @@ BN_OBJS	= $(subst .c,.o,$(BN_SRCS))
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                    ALIASES 
 
-CC		= cc
-AR		= ar rcs
-RM		= rm -rf
-CFLAGS	= -Wall -Wextra -Werror -g
-BN_OBJSRC = $(subst .o,.c,$@)
+PATH_NAME	= ../../
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -g
+INCLUDE		= -I ../../includes
+BN_OBJSRC	= $(subst .o,.c,$@)
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
 
@@ -102,10 +102,13 @@ FULLER			= \e[7m
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	ar -rcs $(PATH_NAME)$(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
+	ranlib $(PATH_NAME)$(NAME)
+	ranlib $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)
 
 bonus:	all $(BN_OBJS)
 
@@ -117,31 +120,31 @@ $(BN_OBJS): $(BN_SRCS)
 		touch $@; \
 	fi
 	@if [ "$@" == "$(lastword $(BN_OBJS))" ]; then \
-		echo "$(AR) $(NAME) $(BN_OBJS)"; \
-		$(AR) $(NAME) $(BN_OBJS); \
+		echo "ar -rcs $(NAME) $(BN_OBJS)"; \
+		ar -rcs $(NAME) $(BN_OBJS); \
+		ranlib $(NAME); \
 	fi
 
 mclean:
 ifneq (,$(shell ls $(OBJS) 2> /dev/null))
-	$(RM) $(OBJS)
+	rm -rf $(OBJS)
 endif
 
 bclean:
 ifneq (,$(shell ls $(BN_OBJS) 2> /dev/null))
-	$(RM) $(BN_OBJS)
+	rm -rf $(BN_OBJS)
 endif
 
 clean: 		mclean bclean
 
 fclean:		clean
 ifneq (,$(shell ls $(NAME) 2> /dev/null))
-	$(RM) $(NAME)
+	rm -rf $(NAME)
 endif
 
 re:			fclean all
 
 bre:		fclean bonus
-
 
 .PHONY:		all bonus mclean bclean clean fclean re bre
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #

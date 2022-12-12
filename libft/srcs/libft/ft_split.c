@@ -6,7 +6,7 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:08:03 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/12/11 17:48:29 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/11 18:50:47 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_split(const char *s, char c)
 	split = malloc((worlds + 1) * sizeof(char *));
 	if (!split)
 		return (0);
-	i = -1
+	i = -1;
 	while (++i < worlds)
 	{
 		start = ft_pointer(s, c);
@@ -49,11 +49,11 @@ static int	ft_pointer(char const *s, char set)
 
 	while (*(s + ++i))
 	{
-		if (!i && (*(s + i) != c))
+		if (!i && (*(s + i) != set))
 			return (i);
-		if (*(s + i) == c)
+		if (*(s + i) == set)
 		{
-			while ((*(s + i) == c) && (*(s + i)))
+			while ((*(s + i) == set) && (*(s + i)))
 				i ++;
 			return (i);
 		}
