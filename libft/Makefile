@@ -6,7 +6,7 @@
 #    By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:07:07 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/11 21:29:05 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/12/11 21:44:29 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ PTH_SRCS	= srcs/
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                    SOURCES 
 
-SRCS	= libft
+SRCS	= libft \
+		  ft_printf
 
 LIBS	= $(addprefix $(PTH_SRCS),$(SRCS))
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
@@ -64,7 +65,9 @@ clean:
 
 fclean:		clean
 	$(foreach libs,$(LIBS),$(MAKE) $(libs) fclean;)
+ifneq (,$(shell ls $(NAME) 2> /dev/null))
 	rm -rf $(NAME)
+endif
 
 re:			fclean all
 
