@@ -6,62 +6,81 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:08:03 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/12/11 18:50:47 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/11 23:47:06 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_worldlen(char const *s, char set);
+static size_t	ft_wordlen(char const *s, char set);
 
-static int	ft_pointer(char const *s, char set);
+static int		ft_setjumper(char const *s, char set);
+
+static int		ft_count_words(char const *s, char set);
 
 char	**ft_split(const char *s, char c)
 {
 	char	**split;
-	int		worlds;
+	int		words;
 	int		i;
 	int		start;
+	int		len;
 
 	if (!s)
 		return (0);
-	worlds = 1;
-	i = 0;
-	while (*(s + i))
-		if (*(s + i) == c)
-			worlds ++;
-	split = malloc((worlds + 1) * sizeof(char *));
+	words = ft_count_words(s, c);
+	split = malloc((words + 1) * sizeof(char *));
 	if (!split)
 		return (0);
 	i = -1;
-	while (++i < worlds)
+	start = 0;
+	while (++i < words)
 	{
-		start = ft_pointer(s, c);
-		*(split + i) = ft_substr(s, start, ft_worldlen((s + start), c));
+		if ((!start && *s == c) || start)
+			start += ft_setjumper((s + start), c);
+		len = ft_wordlen((s + start), c);
+		*(split + i) = ft_substr(s, start, len);
+		start += len;
 	}
-	*(split + worlds) = (void *)0; 
+	*(split + words) = (void *)0; 
 	return (split);
 }
 
-static int	ft_pointer(char const *s, char set)
+static int	ft_count_words(char const *s, char set)
 {
-	static int	i = -1;
+	int	words;
+	int	i;
 
-	while (*(s + ++i))
+	if (!*s)
+		return (1);
+	words = 0;
+	i = 0;
+	while (*(s + i))
 	{
-		if (!i && (*(s + i) != set))
-			return (i);
-		if (*(s + i) == set)
+		if (*(s + i) != set)
 		{
-			while ((*(s + i) == set) && (*(s + i)))
+			words ++;
+			while (*(s + i) && *(s + i) != set)
 				i ++;
-			return (i);
 		}
+		else
+			while ((*(s + i)) && (*(s + i) == set))
+				i ++;
 	}
+	return (words);
+}
+
+static int	ft_setjumper(char const *s, char set)
+{
+	int	i;
+
+	i = 0;
+	while ((*(s + i) == set) && (*(s + i)))
+		i ++;
 	return (i);
 }
 
-static size_t	ft_worldlen(char const *s, char set)
+static size_t	ft_wordlen(char const *s, char set)
 {
 	size_t	len;
 
