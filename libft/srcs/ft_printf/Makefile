@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/11 21:43:22 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/12/11 22:05:27 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJS		= $(SRCS:.c=.o)
 LIBFT_PATH	= ../../
 
 CFLAGS	= -Wall -Wextra -Werror -g
-INCLUDE	= -I../../includes
+INCLUDE	= -I../../ -I../../includes
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
 

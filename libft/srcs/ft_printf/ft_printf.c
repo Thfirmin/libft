@@ -6,7 +6,7 @@
 /*   By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:21:13 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/12/11 21:50:35 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:46:01 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 static int	ft_putformatted_fd(char mask, va_list *ap, int fd);
 
-// Implementation of printf of stdio library
+// .
+// Implementation of printf of stdio library.
 int	ft_printf(const char *format, ...)
 {
 	int		len;
@@ -47,7 +48,7 @@ static int	ft_putformatted_fd(char mask, va_list *ap, int fd)
 		len += ft_putnbr_fd(va_arg(*ap, int), fd);
 	else if (mask == 'u')
 		len += ft_putunbr_fd(va_arg(*ap, unsigned int), fd);
-	else if ((mask == 'p') || (mask == 'x')|| (mask == 'X'))
+	else if ((mask == 'p') || (mask == 'x') || (mask == 'X'))
 		len += ft_puthex_fd(va_arg(*ap, long unsigned int), (mask - 'X'), fd);
 	else if (mask == 'c')
 		len += ft_putchar_fd(va_arg(*ap, int), fd);

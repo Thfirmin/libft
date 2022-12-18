@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/11 21:25:45 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/12/11 22:05:47 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ BN_OBJS	= $(subst .c,.o,$(BN_SRCS))
 PATH_NAME	= ../../
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
-INCLUDE		= -I ../../includes
+INCLUDE		= -I../../ -I../../includes
 BN_OBJSRC	= $(subst .o,.c,$@)
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
