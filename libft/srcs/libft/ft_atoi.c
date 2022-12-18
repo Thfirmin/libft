@@ -14,9 +14,9 @@
 
 //convert ASCII string to integer
 
-ssize_t	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	ssize_t	atoinum;
+	int		atoinum;
 	short	signal;
 
 	signal = 1;

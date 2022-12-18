@@ -24,7 +24,7 @@ int		ft_isprint(int c);
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-ssize_t	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 int		ft_nbrlen(ssize_t n);
