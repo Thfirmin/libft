@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "includes/ft_printf.h"
+#include "libft_bonus.h"
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -27,7 +28,7 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
-int		ft_nbrlen(ssize_t n);
+int		ft_nbrlen(int n);
 size_t	ft_strlen(const char *str);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
