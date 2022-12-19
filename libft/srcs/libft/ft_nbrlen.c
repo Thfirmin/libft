@@ -13,23 +13,18 @@
 #include "libft.h"
 
 // Return number of algorism in a integer
-int	ft_nbrlen(ssize_t n)
+int	ft_nbrlen(int n)
 {
-	size_t	nbr;
-	int		len;
+	unsigned	nbr;
+	int			len;
 
 	len = 0;
-	if (n < 0)
-	{
-		len += 1;
-		nbr = (n * -1);
-	}
+	if (n < 0 && ++len)
+		nbr = -n;
 	else
 		nbr = n;
-	if (nbr != 0)
-	{
+	if (nbr >= 10)
 		len += ft_nbrlen(nbr / 10);
-		len ++;
-	}
+	len ++;
 	return (len);
 }
