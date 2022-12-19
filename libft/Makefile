@@ -60,6 +60,9 @@ $(NAME):	update
 update:
 	$(foreach libs,$(LIBS),$(MAKE) $(libs);)
 
+bonus:
+	$(foreach libs,$(LIBS),$(MAKE) $(libs) bonus;)
+
 clean:
 	$(foreach libs,$(LIBS),$(MAKE) $(libs) clean;)
 
@@ -70,6 +73,8 @@ ifneq (,$(shell ls $(NAME) 2> /dev/null))
 endif
 
 re:			fclean all
+
+bre:		fclean bonus
 
 .PHONY:		all clean fclean re update
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
