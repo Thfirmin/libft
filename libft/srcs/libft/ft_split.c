@@ -52,7 +52,7 @@ static int	ft_count_words(char const *s, char set)
 	int	i;
 
 	if (!*s)
-		return (1);
+		return (0);
 	words = 0;
 	i = 0;
 	while (*(s + i))
