@@ -73,7 +73,8 @@ PATH_NAME	= ../../
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 INCLUDE		= -I../../ -I../../includes
-BN_OBJSRC	= $(subst .o,.c,$@)
+BN_UPDATE	= $(findstring $*.c,$?)
+BN_ACTUAL	= $(subst .o,.c,$@)
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
 
@@ -112,17 +113,22 @@ $(NAME):	$(OBJS)
 
 bonus:	all $(BN_OBJS)
 
-$(BN_OBJS): $(BN_SRCS)
-	@if [ "$(BN_OBJSRC)" == "$(findstring $(BN_OBJSRC),$?)" ]; then \
-		echo "$(CC) $(CFLAGS) -c $*.c -o $@"; \
-		$(CC) $(CFLAGS)  -c $*.c -o $@; \
+$(BN_OBJS):	$(BN_SRCS)
+	@if [ "$(BN_ACTUAL)" = "$(BN_UPDATE)" ]; then \
+		echo "$(CC) $(CFLAGS) $(INCLUDE) -c $*.c -o $@"; \
+		$(CC) $(CFLAGS) $(INCLUDE) -c $*.c -o $@; \
 	else \
 		touch $@; \
 	fi
-	@if [ "$@" == "$(lastword $(BN_OBJS))" ]; then \
+	@if [ "$@" = "$(lastword $(BN_OBJS))" ]; then \
 		echo "ar -rcs $(NAME) $(BN_OBJS)"; \
 		ar -rcs $(NAME) $(BN_OBJS); \
+		echo "ranlib $(NAME)"; \
 		ranlib $(NAME); \
+		echo "ar -rcs $(PATH_NAME)$(NAME) $(BN_OBJS)"; \
+		ar -rcs $(PATH_NAME)$(NAME) $(BN_OBJS); \
+		echo "ranlib $(PATH_NAME)$(NAME)"; \
+		ranlib $(PATH_NAME)$(NAME); \
 	fi
 
 mclean:
