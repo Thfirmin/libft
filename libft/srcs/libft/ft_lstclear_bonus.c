@@ -12,6 +12,7 @@
 
 #include "libft_bonus.h"
 
+// Clear propely a full list
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*nxt;
