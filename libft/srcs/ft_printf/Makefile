@@ -68,6 +68,8 @@ $(NAME):	$(OBJS)
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)
 
+bonus: all
+
 clean: 		mclean
 
 mclean:
