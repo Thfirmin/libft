@@ -6,11 +6,11 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:54:49 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/10/13 20:51:36 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/12/20 19:16:36 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 // Put gived node to the last node of a list
 void	ft_lstadd_back(t_list **lst, t_list *new)

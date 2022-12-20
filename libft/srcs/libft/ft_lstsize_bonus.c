@@ -6,11 +6,11 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:06:56 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/23 02:09:44 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:17:12 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 // Return the number of nodes in a list
 int	ft_lstsize(t_list *lst)

@@ -6,11 +6,11 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:58:13 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/23 02:10:52 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:16:43 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 // Clear propely a full list
 void	ft_lstclear(t_list **lst, void (*del)(void *))

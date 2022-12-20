@@ -6,7 +6,7 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:21:04 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/12/12 01:46:47 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:15:23 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "includes/ft_printf.h"
-#include "libft_bonus.h"
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -58,5 +63,15 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
 
 char	*ft_isall(char *str, int (*is)(int));
+
+t_list	*ft_lstnew(void *content);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

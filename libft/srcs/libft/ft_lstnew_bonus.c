@@ -6,11 +6,11 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:06:19 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/11/23 03:02:10 by thfirmin         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:17:10 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 // Create a new node
 t_list	*ft_lstnew(void *content)

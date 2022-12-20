@@ -6,11 +6,11 @@
 /*   By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:04:41 by thfirmin          #+#    #+#             */
-/*   Updated: 2022/10/08 19:58:28 by Thinotsuki   ###     ###.br              */
+/*   Updated: 2022/12/20 19:16:50 by thfirmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
