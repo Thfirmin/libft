@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/11 22:05:27 by thfirmin         ###   ########.fr        #
+#    Updated: 2022/12/26 13:25:24 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ LIBFT_PATH	= ../../
 
 CFLAGS	= -Wall -Wextra -Werror -g
 INCLUDE	= -I../../ -I../../includes
+MAKEFLAGS	+= --no-print-directory
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
 
