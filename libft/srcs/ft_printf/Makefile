@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/26 13:25:24 by thfirmin         ###   ########.fr        #
+#    Updated: 2023/01/08 01:58:38 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ OBJS		= $(SRCS:.c=.o)
 
 LIBFT_PATH	= ../../
 
-CFLAGS	= -Wall -Wextra -Werror -g
-INCLUDE	= -I../../ -I../../includes
+CFLAGS		= -Wall -Wextra -Werror
+INCLUDE		= -I../../ -I../../includes
 MAKEFLAGS	+= --no-print-directory
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # +>                                     CODES 
@@ -59,6 +59,10 @@ FULLER			= \e[7m
 # +>                                     RULES 
 
 all:		$(NAME)
+
+debug:		CFLAGS += -g
+
+debug:		all
 
 $(NAME):	$(OBJS)
 	ar -rcs $(NAME) $(OBJS)

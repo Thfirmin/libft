@@ -6,7 +6,7 @@
 #    By: thfirmin <thfirmin@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 14:23:56 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/26 13:25:09 by thfirmin         ###   ########.fr        #
+#    Updated: 2023/01/08 01:57:04 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ BN_OBJS	= $(subst .c,.o,$(BN_SRCS))
 
 PATH_NAME	= ../../
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDE		= -I../../ -I../../includes
 BN_UPDATE	= $(findstring $*.c,$?)
 BN_ACTUAL	= $(subst .o,.c,$@)
@@ -109,6 +109,10 @@ $(NAME):	$(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 	ranlib $(PATH_NAME)$(NAME)
 	ranlib $(NAME)
+
+debug:	CFLAGS += -g
+
+debug:	all
 
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)

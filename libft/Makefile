@@ -6,7 +6,7 @@
 #    By: thfirmin <thiagofirmino2001@gmail.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 21:07:07 by thfirmin          #+#    #+#              #
-#    Updated: 2022/12/26 13:24:37 by thfirmin         ###   ########.fr        #
+#    Updated: 2023/01/08 01:56:04 by thfirmin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,9 +56,12 @@ FULLER			= \e[7m
 
 all:		$(NAME)
 
-$(NAME):	update
+$(NAME):	update_libs
 
-update:
+debug: fclean
+	$(foreach libs,$(LIBS),$(MAKE) $(libs) debug;)
+
+update_libs:
 	$(foreach libs,$(LIBS),$(MAKE) $(libs);)
 
 bonus:
@@ -77,6 +80,6 @@ re:			fclean all
 
 bre:		fclean bonus
 
-.PHONY:		all clean fclean re update
+.PHONY:		all debug update_libs bonus clean fclean re bre
 # <+-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-' #
 # vim: fdm=marker fmr=+>,<+ ts=4 sw=4 nofen noet:
